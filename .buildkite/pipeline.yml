@@ -1,9 +1,8 @@
 steps:
-  - label: ":console:"
-    command: "ruby -e 'puts 42'"
-    parallelism: 500
-    agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
-    plugins:
-      - docker#v3.7.0:
-          image: "ruby:2.7-buster"
+  - input: "Input"
+    fields:
+      - text: "Parallel agents"
+        key: parallel-count
+        default: 500
+  - label: ":rocket: Launch containers"
+    command: .buildkite/dynamic_step_generator.sh | buildkite-agent pipeline upload
