@@ -6,5 +6,5 @@ steps:
         key: parallel-count
         default: 500
   - label: ":rocket: Launch containers"
-    command: .buildkite/dynamic_step_generator.sh | buildkite-agent pipeline upload
+    command: .buildkite/launch.sh
     depends_on: "input"
