@@ -1,5 +1,5 @@
 steps:
-  - input: "Input"
+  - block: "Input"
     key: "input"
     fields:
       - text: "Parallel agents"
@@ -7,4 +7,3 @@ steps:
         default: 500
   - label: ":rocket: Launch containers"
     command: .buildkite/launch.sh
-    depends_on: "input"
