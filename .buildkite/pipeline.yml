@@ -7,3 +7,5 @@ steps:
         default: 500
   - label: ":rocket: Launch containers"
     command: .buildkite/launch.sh
+    agents:
+      queue: prototype
